@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#all {
+				width: 200px;
+				height: 200px;
+				border-radius: 10px;
+				position: relative;
+				overflow: hidden;
+			}
+			
+			#all p {
+				position: absolute;
+				top: 43%;
+				width: 100%;
+				z-index: 100;
+			}
+			
+			#all i {
+				display: block;
+				width: 100%;
+				height: 50%;
+				position: absolute;
+				background: rgba(1, 1, 1, 0.2);
+			}
+			
+			#all i.top {
+				top: 0;
+			}
+			
+			#all i.bottom {
+				bottom: 0;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="all">
+			<p>hello World!</p>
+			<i class="top"></i>
+			<i class="bottom"></i>
+		</div>
+		<script src="js/jquery-3.1.1.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$("p").hover(function() {
+				$(".top").css({ "transition": "all 1s", "top": "-50%" });
+				$(".bottom").css({ "transition": "all 1s", "bottom": "-50%" })
+			}, function() {
+				$(".top").css({ "transition": "all 1s", "top": "0%" });
+				$(".bottom").css({ "transition": "all 1s", "bottom": "0%" })
+			})
+		</script>
+	</body>
+
+</html>
